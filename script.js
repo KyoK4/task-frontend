@@ -2,7 +2,7 @@ let tasks = [];
 
 const addTask = async (title, priority) => {
   try {
-    await fetch('hhttps://task-backend-tn1o.onrender.com/tasks', {
+    await fetch('https://task-backend-tn1o.onrender.com/tasks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' 
@@ -19,7 +19,7 @@ const addTask = async (title, priority) => {
 
 const toggleTaskStatus = async (id) => {
   try {
-    await fetch(`hhttps://task-backend-tn1o.onrender.com/tasks/${id}`, {
+    await fetch(`https://task-backend-tn1o.onrender.com/tasks/${id}`, {
       method: 'PUT'
     });
     fetchTasks(); // ดึงข้อมูลใหม่
@@ -31,7 +31,7 @@ const toggleTaskStatus = async (id) => {
 
 const deleteTask = async (id) => {
   try {
-    await fetch(`hhttps://task-backend-tn1o.onrender.com/tasks/${id}`, {
+    await fetch(`https://task-backend-tn1o.onrender.com/tasks/${id}`, {
       method: 'DELETE'
     });
     fetchTasks(); 
@@ -50,7 +50,7 @@ const fetchTasks = async () => {
   try {
     taskListElement.innerHTML = "<h3 style='text-align: center;'> กำลังดึงข้อมูลจากเซิร์ฟเวอร์...</h3>";
     
-    const response = await fetch('hhttps://task-backend-tn1o.onrender.com/tasks');
+    const response = await fetch('https://task-backend-tn1o.onrender.com/tasks');
     const data = await response.json();
     
     tasks = data.map(item => {
